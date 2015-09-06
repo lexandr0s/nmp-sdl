@@ -15,6 +15,7 @@ stamp-h1
 README
 COPYING
 INSTALL
+compile
 
 ### objects and libs
 .libs
