@@ -380,13 +380,13 @@ int CNeutrinoApp::loadSetup(const char * fname)
 	g_settings.softupdate_autocheck = configfile.getBool("softupdate_autocheck" , false);
 
 	// video
-#if HAVE_TRIPLEDRAGON || BOXMODEL_SPARK7162
+//#if HAVE_TRIPLEDRAGON || BOXMODEL_SPARK7162
 	int vid_Mode_default = VIDEO_STD_PAL;
-#else
-	int vid_Mode_default = VIDEO_STD_720P50;
-	if (getenv("NEUTRINO_DEFAULT_SCART") != NULL)
-		vid_Mode_default = VIDEO_STD_PAL;
-#endif
+//#else
+//	int vid_Mode_default = VIDEO_STD_720P50;
+//	if (getenv("NEUTRINO_DEFAULT_SCART") != NULL)
+//		vid_Mode_default = VIDEO_STD_PAL;
+//#endif
 	g_settings.video_Mode = configfile.getInt32("video_Mode", vid_Mode_default);
 #ifdef ANALOG_MODE
 	g_settings.analog_mode1 = configfile.getInt32("analog_mode1", (int)ANALOG_MODE(BOTH,SD,RGB)); // default RGB
@@ -780,7 +780,7 @@ int CNeutrinoApp::loadSetup(const char * fname)
 	g_settings.mode_clock = configfile.getInt32( "mode_clock",  0);
 	g_settings.zapto_pre_time = configfile.getInt32( "zapto_pre_time",  0);
 	g_settings.spectrum         = configfile.getBool("spectrum"          , false);
-	g_settings.channellist_additional = configfile.getInt32("channellist_additional", 1);
+	g_settings.channellist_additional = configfile.getInt32("channellist_additional", 2);
 	g_settings.eventlist_additional = configfile.getInt32("eventlist_additional", 0);
 	g_settings.channellist_epgtext_align_right	= configfile.getBool("channellist_epgtext_align_right"          , false);
 	g_settings.channellist_progressbar_design = configfile.getInt32("channellist_progressbar_design", g_settings.progressbar_design);
